@@ -10,6 +10,7 @@
 #define MAX_MEASUREMENTS 1000        /* number of measurements to make */
 #define ONE_HUNDRED_THOUSAND 100000  /* macro for value 100000 */
 #define MAX_INPUT_DIGITS 4           /* largest digit user may enter for limit */
+#define NEWLINE_IDENTIFIER 13	     /* ascii value for a newline */
 
 /* Global Variables */
 char repeat_prompt[] = "Would you like to generate another histogram? (Y = yes, N = no):\r\n";
@@ -213,7 +214,7 @@ void Get_lower_bound(){
 	rxByte = USART_Read(USART2);
 
 	// while the user hasn't hit enter
-	while((rxByte != '\r') || (rxByte != '\n') && i<MAX_INPUT_DIGITS){
+	while((rxByte != NEWLINE_IDENTIFIER) && i<MAX_INPUT_DIGITS){
 
 		memset( buffer, '\0', sizeof(buffer));
 		sprintf((char *)buffer, "%c", rxByte);
