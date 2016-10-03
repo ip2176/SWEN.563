@@ -41,4 +41,24 @@ Recipe Commands:
 | END_LOOP   | 101    | NA                                                                                   | NA    | Marks the end of a recipe loop block.                                                       |
 | RECIPE_END | 000    | NA                                                                                   | NA    |                                                                                             |
 
+## User Commands
 
+The User commands are entered via the system console keyboard. Each set of
+overrides are entered as a pair of characters followed by a <CR>. The first character
+represents the command for the first servo, the second for the second servo. Each
+character entered will be echoed to the console screen as entered. The <CR> will
+initiate the “simultaneous” execution of the overrides by each motor and generate a
+<LF> followed by the override prompt character “>” on the beginning of the next line.
+
+Note that if either “X” or “x” is entered before the <CR>, the entire override command
+is cancelled and the “>” override prompt character is written on the beginning of a
+new line on the system console.
+
+| Command                                          | Mnemonic | Comments                                                          |
+|--------------------------------------------------|----------|-------------------------------------------------------------------|
+| Pause Recipe execution                           | P or p   | Not operative after recipe end or error                           |
+| Continue Recipe execution                        | C or c   | Not operative after recipe end or error                           |
+| Move 1 position to the right if possible         | R or r   | Not operative if recipe isn’t paused or at extreme right position |
+| Move 1 position to the left if possible          | L or l   | Not operative if recipe isn’t paused or at extreme left position  |
+| No-op no new override entered for selected servo | N or n   | NA                                                                |
+| Restart the recipe                               | B or b   | Starts the recipe’s execution immediately                         |
