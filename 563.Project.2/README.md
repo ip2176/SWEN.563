@@ -62,3 +62,9 @@ new line on the system console.
 | Move 1 position to the left if possible          | L or l   | Not operative if recipe isn’t paused or at extreme left position  |
 | No-op no new override entered for selected servo | N or n   | NA                                                                |
 | Restart the recipe                               | B or b   | Starts the recipe’s execution immediately                         |
+
+Example override commands:
+ Pc <CR> Pause the recipe on Servo 1 and continue (resume) the recipe
+on Servo 2.
+ Rn <CR> Move Servo 1 to the right one position (if possible), no op of Server 2.
+ Bb <CR> Restart Servo 1’s recipe and Servo 2’s recipes. 
